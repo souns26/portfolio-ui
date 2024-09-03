@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import MarkdownFreelanceLayout from '../../layouts/MarkdownFreelanceLayout.astro';
+
+export async function getStaticPaths() {
+    const projectEntries = await getCollection('freelance');
+    return projectEntries.map(entry => ({
+        params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<MarkdownFreelanceLayout frontmatter={entry.data}>
+    <Content />
+</MarkdownFreelanceLayout>
+

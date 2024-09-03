@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+const freelanceProjects = await getCollection("freelance");
+const productProjects = await getCollection("product");
+const pageTitle = "Works";
+---
+<Layout pageTitle={pageTitle}>
+    <h2>Freelance Portfolio</h2>
+    <ul role="list" class="link-card-grid">
+        {freelanceProjects.map((card) => <Card 
+            url={`/freelance/${card.slug}/`} 
+            image={card.data.image.url} 
+            title={card.data.title} 
+            body={card.data.description}
+        />)}
+    </ul>
+    <h2>Product Projects</h2>
+    <ul role="list" class="link-card-grid">
+        {productProjects.map((card) => <Card 
+            url={`/product/${card.slug}/`} 
+            image={card.data.image.url} 
+            title={card.data.title} 
+            body={card.data.description}
+        />)}
+    </ul>
+</Layout>
+

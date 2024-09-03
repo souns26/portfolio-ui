@@ -1,0 +1,17 @@
+---
+import BaseLayout from './Layout.astro';
+const { frontmatter } = Astro.props;
+console.log(frontmatter);
+
+---
+<BaseLayout pageTitle={frontmatter.title}>
+    <h2>{frontmatter.title}</h2>
+    <slot />
+    <ul class="badge__list">
+        <li><span class="badge badge--item">PRESENTATION</span><a class="badge__link" href={frontmatter.website} target="_blank">{frontmatter.link}</a></li>
+    </ul>
+    <div class="center">
+        <img class="pro-img" width="500px" height="281" src={frontmatter.worksImage.url} alt={frontmatter.worksImage.alt} />
+    </div>
+</BaseLayout>
+
