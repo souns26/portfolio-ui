@@ -1,19 +1,21 @@
----
+<!-- ---
 import { getCollection } from 'astro:content';
-import MarkdownFreelanceLayout from '../../layouts/MarkdownFreelanceLayout.astro';
+import MarkdownExpLayout from '../layouts/MarkdownExpLayout.astro';
 
 export async function getStaticPaths() {
-    const entries = await getCollection('freelance');
+    const entries = await getCollection('experience');
+    
     return entries.map(entry => ({
         params: { slug: entry.slug }, props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
+console.log(entry);
+
 const { Content } = await entry.render();
 ---
 
-<MarkdownFreelanceLayout frontmatter={entry.data}>
+<MarkdownExpLayout frontmatter={entry.data}>
     <Content />
-</MarkdownFreelanceLayout>
-
+</MarkdownExpLayout> -->

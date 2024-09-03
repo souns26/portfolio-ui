@@ -20,8 +20,19 @@ const projectsCollection = defineCollection({
     })
 });
 
+const resumeCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    year: z.string(),
+    subtitle: z.string(),
+    description: z.string(),
+  })
+});
+
 export const collections = {
   freelance: projectsCollection,
   product: projectsCollection,
+  experience: resumeCollection
 };
 

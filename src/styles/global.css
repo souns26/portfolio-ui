@@ -1,14 +1,16 @@
 /* Global styles */
 :root {
     --background: #121212; 
-    --background-light: #fdebf3;
+    --background-light: #ededed;
     --button: #e665c3;
-    --text: #fdebf3;
+    --text: #ededed;
     --text-light: #1e1e2e; 
     --text-link: #e665c3;
     --underline: #c42097;
     --header: "Bitter", serif;
     --body: "Bitter", serif;
+    --badge: #7f4a71;
+    --badge-light: #e094cc;
 }
 
 html {
@@ -38,7 +40,6 @@ h2 {
     text-underline-offset: 6px;
     font-size: 2.1rem;
     margin-top: 2rem;
-
 }
 
 p {
@@ -55,11 +56,14 @@ small, li {
 a:hover {
     color:#e665c3; 
 }
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
 /* Navigation Bar */
 .navbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 0.8rem;
+    margin-top: 1rem;
 }
 
 .navbar__title {
@@ -99,13 +103,14 @@ a:hover {
 
 /* Badge */
 .badge {
-    background-color: #584966;
+    background-color: var(--badge);
     color: var(--text);
     border-radius: 6px;
     font-family: var(--body);
     font-weight: 600;
     font-size: .85rem;
     padding: 0.3em 0.6em 0.2em;
+    width: fit-content;
 }
 
 .badge__list {
@@ -342,14 +347,28 @@ html.light {
     color: var(--text-link);
 }
 
+.light .badge {
+    background-color: var(--badge-light);
+    color: var(--text-light);
+}
+
 /* Media Query */
 @media only screen and (max-width: 600px) {
+
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
     body {
         width: 350px;
     }
 
-    .navbar {
-        display: initial;
+    .title {
+        align-items: center;
     }
 
     .navbar__title {
@@ -357,7 +376,7 @@ html.light {
     }
 
     .navbar__menu {
-        text-align: center;
+        justify-content: center;
     }
 
     .navbar__menu > a {
@@ -378,6 +397,14 @@ html.light {
     .pro-img {
         height: auto;
         width: 350px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+    body {
+        width: auto;
+        margin: 0 1rem;
     }
 }
 
