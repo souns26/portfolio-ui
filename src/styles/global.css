@@ -357,14 +357,20 @@ html.light {
 
     h1 {
         text-align: center;
+        font-size: 2.5rem;
     }
 
     h2 {
         text-align: center;
+        font-size: 2rem;
     }
 
     body {
         width: 350px;
+    }
+
+    p {
+        font-size: 1rem;
     }
 
     .title {
@@ -377,6 +383,7 @@ html.light {
 
     .navbar__menu {
         justify-content: center;
+        font-size: 1rem;
     }
 
     .navbar__menu > a {
@@ -389,14 +396,27 @@ html.light {
         margin: 8px 1px;
     }
 
+    .badge {
+        font-size: 0.8rem;
+    }
     .badge__list {
         font-size: 0.9rem;
         text-indent: 0;
     }
-
+    .badge--item {
+        font-size: 0.65rem;
+    }
     .pro-img {
         height: auto;
         width: 350px;
+    }
+    .card__title {
+        margin: 0.5rem 0 0;
+        font-size: 1.4rem;
+    }
+    
+    .card__txt {
+        font-size: 0.9rem;
     }
 }
 
