@@ -19,6 +19,14 @@ const { pageTitle } = Astro.props;
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap">    
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PH2FHPYDVD"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PH2FHPYDVD');
+        </script>
         <ViewTransitions />
 	</head>
 	<body>
